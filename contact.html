@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Little Red Box</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── CONTACT-SPECIFIC ── */
+    .contact-section {
+      padding: 5rem 2rem;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* Sidebar info */
+    .contact-info .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 300;
+      color: var(--crimson);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info .ornament {
+      justify-content: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info .ornament::before { display: none; }
+    .contact-info .ornament::after { width: 40px; }
+
+    .contact-info p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-detail-item {}
+
+    .contact-detail-item dt {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-detail-item dd {
+      font-size: 0.83rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .contact-detail-item dd a {
+      color: var(--crimson);
+      text-decoration: none;
+    }
+
+    .contact-detail-item dd a:hover {
+      text-decoration: underline;
+    }
+
+    /* Form wrapper */
+    .contact-form-wrap {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .contact-form-wrap h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-sub {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Tally iframe reset */
+    .contact-form-wrap iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+    @media (max-width: 820px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-info .ornament { justify-content: center; }
+      .contact-info .ornament::before { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="logo.png" alt="Little Red Box">
+        <div class="header-logo-text">
+          <span class="brand">Little Red Box</span>
+          <span class="tagline">Antique &amp; Vintage Jewellery</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="header-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener" class="nav-collection">Our Collection ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+
+    <!-- Page header -->
+    <div class="page-header">
+      <p class="eyebrow">Get In Touch</p>
+      <h1>Contact Us</h1>
+      <div class="ornament"><span>&#10022;</span></div>
+    </div>
+
+    <!-- Contact section -->
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <!-- Info sidebar -->
+        <div class="contact-info">
+          <p class="eyebrow">We'd Love to Hear From You</p>
+          <h2>Make an Enquiry</h2>
+          <div class="ornament"><span>&#10022;</span></div>
+          <p>Whether you're enquiring about a specific piece, looking for something particular, or simply want to know more about our collection, we're always happy to help.</p>
+
+          <dl class="contact-detail">
+            <div class="contact-detail-item">
+              <dt>Telephone</dt>
+              <dd><a href="tel:01427668389">01427 668 389</a></dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Visit Us</dt>
+              <dd>
+                Hemswell Antique Centres<br>
+                Caenby Corner Estate<br>
+                Hemswell Cliff, Gainsborough<br>
+                Lincolnshire
+              </dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Our Cabinets</dt>
+              <dd>
+                Building One, First Floor<br>
+                Cabinets D8 &amp; D9<br><br>
+                The Guardroom<br>
+                Cabinets 7, 8 &amp; 116
+              </dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Browse Online</dt>
+              <dd>
+                <a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener">View our full collection ↗</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Tally form -->
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <p class="form-sub">We'll be in touch as soon as possible.</p>
+
+          <!-- ╔══════════════════════════════════════════════════╗
+               ║  Replace YOUR_FORM_ID with your Tally form ID   ║
+               ║  e.g. https://tally.so/r/abc123 → ID = abc123   ║
+               ╚══════════════════════════════════════════════════╝ -->
+          <iframe
+            data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="400"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Contact Little Red Box">
+          </iframe>
+          <script>
+            var d = document,
+                w = "https://tally.so/widgets/embed.js",
+                l = function () {
+                  if ("undefined" != typeof Tally) Tally.loadEmbeds();
+                  else d.querySelectorAll("[data-tally-src]:not([src])").forEach(function (e) {
+                    e.src = e.dataset.tallySrc;
+                  });
+                };
+            if ("undefined" != typeof Tally) l();
+            else if (d.querySelector('script[src="' + w + '"]') == null) {
+              var s = d.createElement("script");
+              s.src = w;
+              s.onload = l;
+              s.onerror = l;
+              d.body.appendChild(s);
+            }
+          </script>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-col">
+        <img src="logo.png" alt="Little Red Box">
+        <span class="f-brand">Little Red Box</span>
+        <span class="f-tag">Antique &amp; Vintage Jewellery</span>
+        <p class="f-copy">Dealer No. 1659 — Hemswell Antique Centres, Lincolnshire.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="about.html">About Us</a><br>
+          <a href="contact.html">Contact</a><br>
+          <a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener">Our Collection ↗</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Hemswell Antique Centres<br>
+          Caenby Corner Estate<br>
+          Hemswell Cliff, Gainsborough<br>
+          Lincolnshire<br><br>
+          <a href="tel:01427668389">01427 668 389</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 Little Red Box — Antique &amp; Vintage Jewellery</span>
+      <span>Dealer No. 1659</span>
+    </div>
+  </footer>
+
+</body>
+</html>
