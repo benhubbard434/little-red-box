@@ -109,14 +109,6 @@ main { flex: 1; }
   border-bottom-color: var(--crimson);
 }
 
-.header-nav a.nav-collection {
-  color: var(--gold);
-}
-
-.header-nav a.nav-collection:hover {
-  color: var(--crimson);
-  border-bottom-color: var(--crimson);
-}
 
 /* ─── PAGE HEADER (inner pages) ───────────────────── */
 .page-header {
