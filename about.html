@@ -11,63 +11,13 @@
   <style>
     /* ── ABOUT-SPECIFIC ── */
     .about-section {
-      padding: 5rem 2rem;
+      padding: 5rem 2rem 6rem;
     }
 
-    .about-inner {
-      max-width: 1100px;
+    .about-copy {
+      max-width: 760px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: 5rem;
-      align-items: start;
     }
-
-    /* Photo */
-    .about-photo-wrap {
-      position: sticky;
-      top: 100px;
-    }
-
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      display: block;
-      border: 1px solid var(--border);
-    }
-
-    .photo-caption {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      text-align: center;
-      margin-top: 0.75rem;
-      letter-spacing: 0.04em;
-    }
-
-    /* Copy */
-    .about-copy .eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-
-    .about-copy h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 300;
-      color: var(--crimson);
-      letter-spacing: 0.06em;
-      margin-bottom: 0.5rem;
-    }
-
-    .about-copy .ornament { justify-content: flex-start; margin-bottom: 1.75rem; }
-    .about-copy .ornament::before { display: none; }
-    .about-copy .ornament::after { width: 40px; }
 
     .about-copy p {
       font-size: 0.88rem;
@@ -78,15 +28,17 @@
 
     .about-copy p:last-child { margin-bottom: 0; }
 
-    .about-copy .pull-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--text-dark);
-      border-left: 3px solid var(--gold-l);
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      margin: 2rem 0;
-      line-height: 1.65;
+    .about-copy a {
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-l);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .about-copy a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
     }
 
     /* Specialities strip */
@@ -127,12 +79,6 @@
       background-color: var(--cream);
     }
 
-    @media (max-width: 820px) {
-      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-photo-wrap { position: static; }
-      .about-copy .ornament { justify-content: center; }
-      .about-copy .ornament::before { display: block; }
-    }
   </style>
 </head>
 <body>
@@ -163,44 +109,25 @@
   <!-- ══ MAIN ══ -->
   <main>
 
-    <!-- Page header -->
-    <div class="page-header">
-      <p class="eyebrow">Our Story</p>
-      <h1>About Us</h1>
-      <div class="ornament"><span>&#10022;</span></div>
-    </div>
-
     <!-- Main about content -->
     <section class="about-section">
-      <div class="about-inner">
+      <div class="about-copy">
 
-        <!-- Photo -->
-        <div class="about-photo-wrap">
-          <img
-            src="https://picsum.photos/seed/littleredbox/600/800"
-            alt="Jane &amp; Mike — Little Red Box"
-            class="about-photo">
-          <p class="photo-caption">Jane &amp; Mike at Hemswell Antique Centres</p>
-        </div>
+        <p>Welcome to Little Red Box — a family-built business with a passion for timeless antique, retro, and vintage jewellery.</p>
 
-        <!-- Copy -->
-        <div class="about-copy">
-          <p class="eyebrow">Dealer No. 1659</p>
-          <h2>A Passion for the Exceptional</h2>
-          <div class="ornament"><span>&#10022;</span></div>
+        <p>With over 1,000 carefully curated pieces in stock, we specialise in jewellery with character, history, and individuality. From elegant antique treasures to bold retro statement pieces and much-loved vintage classics, every item is personally selected for its quality and charm.</p>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Little Red Box is built on more than 30 years of industry experience. Originally founded as JAM Jewellery by Jane and Mike, the business has grown through a genuine love of beautiful jewellery and the relationships built with customers over the years. Today, their daughter Charlotte proudly continues that legacy, bringing a fresh chapter to the business while keeping the same personal approach at its heart.</p>
 
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>The name Little Red Box is inspired by the signature red jewellery boxes that every purchase is presented in — a small detail that has become a favourite among loyal customers from around the world.</p>
 
-          <blockquote class="pull-quote">"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."</blockquote>
+        <p>We believe buying vintage and antique jewellery should feel personal, enjoyable, and never intimidating. Whether you are searching for a meaningful gift, a future heirloom, or simply an addition to your own collection, we are always happy to help.</p>
 
-          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p>If you cannot find exactly what you are looking for, we offer a complimentary <a href="search.html">Personal Shopper Service</a>. Whether you have a specific piece in mind or do not know where to begin, we are always delighted to help guide your search using our years of expertise and industry contacts.</p>
 
-          <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+        <p>You can explore our collection online <a href="collection.html">here</a> or visit us at <a href="contact.html">Hemswell Antique Centres</a>, where we proudly display in Cabinets D8 &amp; D9 in Building One, and Cabinets 7 &amp; 8 in the Guardroom.</p>
 
-          <p>Temporibus autem quibusdam et aut officiis debitis rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-        </div>
+        <p>We look forward to helping you find something truly special.</p>
 
       </div>
     </section>
