@@ -24,7 +24,7 @@
       line-height: 1.9;
     }
 
-    .collection-body a {
+    .collection-body a:not(.btn) {
       color: var(--crimson);
       text-decoration: none;
       border-bottom: 1px solid var(--gold-l);
@@ -32,7 +32,7 @@
       transition: color 0.2s, border-color 0.2s;
     }
 
-    .collection-body a:hover {
+    .collection-body a:not(.btn):hover {
       color: var(--gold);
       border-bottom-color: var(--gold);
     }
