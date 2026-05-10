@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Collection — Little Red Box</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .collection-body {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 5rem 2rem 6rem;
+    }
+
+    .collection-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    .collection-body a {
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-l);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .collection-body a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/logo.png" alt="Little Red Box">
+        <div class="header-logo-text">
+          <span class="brand">Little Red Box</span>
+          <span class="tagline">Antique &amp; Vintage Jewellery</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="header-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="collection.html" class="active nav-collection">Our Collection</a></li>
+          <li><a href="search.html">Specialist Jewellery Search</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+
+    <div class="page-header">
+      <p class="eyebrow">Browse Our Stock</p>
+      <h1>Our Collection</h1>
+      <div class="ornament"><span>&#10022;</span></div>
+    </div>
+
+    <div class="collection-body">
+      <p>We are proud to display our jewellery in Hemswell Antique Centres. To continue to shop our collection, please <a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener">click here</a> to visit our dedicated page on the Hemswell Antique Centres website.</p>
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-col">
+        <img src="assets/logo.png" alt="Little Red Box">
+        <span class="f-brand">Little Red Box</span>
+        <span class="f-tag">Antique &amp; Vintage Jewellery</span>
+        <p class="f-copy">Dealer No. 1659 — Hemswell Antique Centres, Lincolnshire.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="about.html">About Us</a><br>
+          <a href="collection.html">Our Collection</a><br>
+          <a href="search.html">Specialist Jewellery Search</a><br>
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Hemswell Antique Centres<br>
+          Caenby Corner Estate<br>
+          Hemswell Cliff, Gainsborough<br>
+          Lincolnshire<br><br>
+          <a href="tel:01427668389">01427 668 389</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 Little Red Box — Antique &amp; Vintage Jewellery</span>
+      <span>Dealer No. 1659</span>
+    </div>
+  </footer>
+
+</body>
+</html>
