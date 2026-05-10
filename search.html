@@ -9,194 +9,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── SEARCH-SPECIFIC ── */
-    .search-intro {
-      max-width: 620px;
+    /* ── PERSONAL SHOPPER ── */
+    .shopper-section {
+      max-width: 760px;
       margin: 0 auto;
-      text-align: center;
-      padding: 3.5rem 2rem 0;
+      padding: 5rem 2rem 6rem;
     }
 
-    .search-intro p {
+    .shopper-hook {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       color: var(--text-mid);
       line-height: 1.85;
+      margin-bottom: 2.5rem;
     }
 
-    .search-sections {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3.5rem 2rem 5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    /* Section heading */
-    .search-group-header {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
+    .shopper-body {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.95;
       margin-bottom: 1.5rem;
     }
 
-    .search-group-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-
-    .search-group-header::after {
-      content: '';
-      display: block;
-      flex: 1;
-      height: 1px;
-      background-color: var(--border);
-    }
-
-    /* Grid of browse cards */
-    .browse-grid {
-      display: grid;
-      gap: 1px;
-      background-color: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .browse-grid--4 { grid-template-columns: repeat(4, 1fr); }
-    .browse-grid--5 { grid-template-columns: repeat(5, 1fr); }
-    .browse-grid--3 { grid-template-columns: repeat(3, 1fr); }
-
-    .browse-card {
-      background-color: var(--cream);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem 1.25rem;
-      gap: 0.6rem;
-      transition: background-color 0.2s;
-      cursor: pointer;
-    }
-
-    .browse-card:hover {
-      background-color: var(--parchment);
-    }
-
-    .browse-card:hover .card-label {
-      color: var(--crimson);
-    }
-
-    .card-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-      color: var(--gold-l);
-      margin-bottom: 0.25rem;
-    }
-
-    .card-label {
+    .shopper-cta {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
       color: var(--text-dark);
-      transition: color 0.2s;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.75rem;
     }
 
-    .card-count {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-light);
-    }
-
-    /* Price range cards — slightly different style */
-    .price-card {
+    .shopper-form-wrap {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.75rem 1rem;
-      gap: 0.4rem;
-      transition: border-color 0.2s, background-color 0.2s;
+      padding: 2.5rem;
     }
 
-    .price-card:hover {
-      border-color: var(--gold-l);
-      background-color: var(--parchment);
-    }
-
-    .price-card:hover .price-label { color: var(--crimson); }
-
-    .price-range {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--crimson);
-    }
-
-    .price-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      transition: color 0.2s;
-    }
-
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-    }
-
-    /* Full-width CTA banner */
-    .search-cta {
-      background-color: var(--text-dark);
-      padding: 3rem 2rem;
-      text-align: center;
-      border-top: 1px solid #3A2A1A;
-    }
-
-    .search-cta p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: #C9BAA8;
-      margin-bottom: 1.25rem;
-    }
-
-    .search-cta .btn-gold {
-      border-color: var(--gold-l);
-      color: var(--gold-l);
-    }
-
-    .search-cta .btn-gold:hover {
-      background-color: var(--gold);
-      color: #fff;
-      border-color: var(--gold);
-    }
-
-    @media (max-width: 900px) {
-      .browse-grid--5 { grid-template-columns: repeat(3, 1fr); }
-      .browse-grid--4 { grid-template-columns: repeat(2, 1fr); }
-      .price-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 560px) {
-      .browse-grid--3,
-      .browse-grid--4,
-      .browse-grid--5 { grid-template-columns: repeat(2, 1fr); }
-      .price-grid { grid-template-columns: repeat(2, 1fr); }
+    .shopper-form-wrap iframe {
+      display: block;
+      width: 100%;
+      border: none;
     }
   </style>
 </head>
@@ -217,7 +73,7 @@
         <ul class="header-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="collection.html" class="nav-collection">Our Collection</a></li>
+          <li><a href="collection.html">Our Collection</a></li>
           <li><a href="search.html" class="active">Specialist Jewellery Search</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -228,154 +84,51 @@
   <!-- ══ MAIN ══ -->
   <main>
 
-    <!-- Page header -->
     <div class="page-header">
-      <p class="eyebrow">Browse &amp; Discover</p>
+      <p class="eyebrow">Personal Shopper Service</p>
       <h1>Specialist Jewellery Search</h1>
       <div class="ornament"><span>&#10022;</span></div>
     </div>
 
-    <div class="search-intro">
-      <p>Explore our collection by era, gemstone, metal or price — each selection connects you directly to our curated stock at Hemswell Antique Centres.</p>
-    </div>
+    <div class="shopper-section">
 
-    <div class="search-sections">
+      <p class="shopper-hook">Can't find what you're looking for? Don't know where to start your search? Buying a gift for someone and want to talk through your ideas? Looking for help in finding the perfect engagement ring?</p>
 
-      <!-- By Era -->
-      <div>
-        <div class="search-group-header"><h2>Shop by Era</h2></div>
-        <div class="browse-grid browse-grid--5">
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:victorian/" target="_blank" rel="noopener">
-            <span class="card-icon">&#10022;</span>
-            <span class="card-label">Victorian</span>
-            <span class="card-count">c.1837–1901</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:edwardian/" target="_blank" rel="noopener">
-            <span class="card-icon">&#10022;</span>
-            <span class="card-label">Edwardian</span>
-            <span class="card-count">c.1901–1910</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:art-nouveau/" target="_blank" rel="noopener">
-            <span class="card-icon">&#10022;</span>
-            <span class="card-label">Art Nouveau</span>
-            <span class="card-count">c.1890–1910</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:art-deco/" target="_blank" rel="noopener">
-            <span class="card-icon">&#10022;</span>
-            <span class="card-label">Art Deco</span>
-            <span class="card-count">c.1920–1940</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:retro/" target="_blank" rel="noopener">
-            <span class="card-icon">&#10022;</span>
-            <span class="card-label">Retro &amp; Vintage</span>
-            <span class="card-count">c.1940–1980</span>
-          </a>
-        </div>
+      <p class="shopper-body">At Little Red Box we know that it's not always simple buying a piece of jewellery and that's why we offer a complimentary Personal Shopper Service with no obligation to buy. We'll help define your perfect piece and then show you any matching designs we have in stock. If we don't have it in stock, don't worry, we'll use our industry contacts to do our best to source it for you.</p>
+
+      <p class="shopper-cta">Fill in the below Personal Shopper Enquiry Form and we'll be in touch as soon as possible to help you find your perfect piece.</p>
+
+      <div class="shopper-form-wrap">
+        <iframe
+          data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="400"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Personal Shopper Enquiry — Little Red Box">
+        </iframe>
+        <script>
+          var d = document,
+              w = "https://tally.so/widgets/embed.js",
+              l = function () {
+                if ("undefined" != typeof Tally) Tally.loadEmbeds();
+                else d.querySelectorAll("[data-tally-src]:not([src])").forEach(function (e) {
+                  e.src = e.dataset.tallySrc;
+                });
+              };
+          if ("undefined" != typeof Tally) l();
+          else if (d.querySelector('script[src="' + w + '"]') == null) {
+            var s = d.createElement("script");
+            s.src = w;
+            s.onload = l;
+            s.onerror = l;
+            d.body.appendChild(s);
+          }
+        </script>
       </div>
 
-      <!-- By Gemstone -->
-      <div>
-        <div class="search-group-header"><h2>Shop by Gemstone</h2></div>
-        <div class="browse-grid browse-grid--4">
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:diamond/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Diamond</span>
-            <span class="card-count">158 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:sapphire/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Sapphire</span>
-            <span class="card-count">51 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:ruby/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Ruby</span>
-            <span class="card-count">26 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:emerald/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Emerald</span>
-            <span class="card-count">17 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:amethyst/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Amethyst</span>
-            <span class="card-count">17 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:tanzanite/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Tanzanite</span>
-            <span class="card-count">18 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:opal/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Opal</span>
-            <span class="card-count">6 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:garnet/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9671;</span>
-            <span class="card-label">Garnet</span>
-            <span class="card-count">10 pieces</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- By Metal -->
-      <div>
-        <div class="search-group-header"><h2>Shop by Metal</h2></div>
-        <div class="browse-grid browse-grid--4">
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:gold/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9830;</span>
-            <span class="card-label">Gold</span>
-            <span class="card-count">343 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:platinum/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9830;</span>
-            <span class="card-label">Platinum</span>
-            <span class="card-count">22 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:white-gold/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9830;</span>
-            <span class="card-label">White Gold</span>
-            <span class="card-count">11 pieces</span>
-          </a>
-          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:rose-gold/" target="_blank" rel="noopener">
-            <span class="card-icon">&#9830;</span>
-            <span class="card-label">Rose Gold</span>
-            <span class="card-count">Selected pieces</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- By Price -->
-      <div>
-        <div class="search-group-header"><h2>Shop by Budget</h2></div>
-        <div class="price-grid">
-          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:28-150/" target="_blank" rel="noopener">
-            <span class="price-range">Under £150</span>
-            <span class="price-label">Entry Pieces</span>
-          </a>
-          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:150-300/" target="_blank" rel="noopener">
-            <span class="price-range">£150 – £300</span>
-            <span class="price-label">Mid Range</span>
-          </a>
-          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:300-600/" target="_blank" rel="noopener">
-            <span class="price-range">£300 – £600</span>
-            <span class="price-label">Fine Pieces</span>
-          </a>
-          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:600-1850/" target="_blank" rel="noopener">
-            <span class="price-range">£600 &amp; Above</span>
-            <span class="price-label">Collector's Pieces</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA Banner -->
-    <div class="search-cta">
-      <p>Can't find what you're looking for? Get in touch — we source pieces to order.</p>
-      <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
     </div>
 
   </main>
