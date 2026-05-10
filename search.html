@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialist Jewellery Search — Little Red Box</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── SEARCH-SPECIFIC ── */
+    .search-intro {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 3.5rem 2rem 0;
+    }
+
+    .search-intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+    }
+
+    .search-sections {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    /* Section heading */
+    .search-group-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-group-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .search-group-header::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background-color: var(--border);
+    }
+
+    /* Grid of browse cards */
+    .browse-grid {
+      display: grid;
+      gap: 1px;
+      background-color: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .browse-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    .browse-grid--5 { grid-template-columns: repeat(5, 1fr); }
+    .browse-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+    .browse-card {
+      background-color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.25rem;
+      gap: 0.6rem;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+
+    .browse-card:hover {
+      background-color: var(--parchment);
+    }
+
+    .browse-card:hover .card-label {
+      color: var(--crimson);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--gold-l);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+
+    .card-count {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* Price range cards — slightly different style */
+    .price-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.75rem 1rem;
+      gap: 0.4rem;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .price-card:hover {
+      border-color: var(--gold-l);
+      background-color: var(--parchment);
+    }
+
+    .price-card:hover .price-label { color: var(--crimson); }
+
+    .price-range {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--crimson);
+    }
+
+    .price-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+
+    /* Full-width CTA banner */
+    .search-cta {
+      background-color: var(--text-dark);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid #3A2A1A;
+    }
+
+    .search-cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #C9BAA8;
+      margin-bottom: 1.25rem;
+    }
+
+    .search-cta .btn-gold {
+      border-color: var(--gold-l);
+      color: var(--gold-l);
+    }
+
+    .search-cta .btn-gold:hover {
+      background-color: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .browse-grid--5 { grid-template-columns: repeat(3, 1fr); }
+      .browse-grid--4 { grid-template-columns: repeat(2, 1fr); }
+      .price-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .browse-grid--3,
+      .browse-grid--4,
+      .browse-grid--5 { grid-template-columns: repeat(2, 1fr); }
+      .price-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/logo.png" alt="Little Red Box">
+        <div class="header-logo-text">
+          <span class="brand">Little Red Box</span>
+          <span class="tagline">Antique &amp; Vintage Jewellery</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="header-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener" class="nav-collection">Our Collection ↗</a></li>
+          <li><a href="search.html" class="active">Specialist Jewellery Search</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+
+    <!-- Page header -->
+    <div class="page-header">
+      <p class="eyebrow">Browse &amp; Discover</p>
+      <h1>Specialist Jewellery Search</h1>
+      <div class="ornament"><span>&#10022;</span></div>
+    </div>
+
+    <div class="search-intro">
+      <p>Explore our collection by era, gemstone, metal or price — each selection connects you directly to our curated stock at Hemswell Antique Centres.</p>
+    </div>
+
+    <div class="search-sections">
+
+      <!-- By Era -->
+      <div>
+        <div class="search-group-header"><h2>Shop by Era</h2></div>
+        <div class="browse-grid browse-grid--5">
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:victorian/" target="_blank" rel="noopener">
+            <span class="card-icon">&#10022;</span>
+            <span class="card-label">Victorian</span>
+            <span class="card-count">c.1837–1901</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:edwardian/" target="_blank" rel="noopener">
+            <span class="card-icon">&#10022;</span>
+            <span class="card-label">Edwardian</span>
+            <span class="card-count">c.1901–1910</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:art-nouveau/" target="_blank" rel="noopener">
+            <span class="card-icon">&#10022;</span>
+            <span class="card-label">Art Nouveau</span>
+            <span class="card-count">c.1890–1910</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:art-deco/" target="_blank" rel="noopener">
+            <span class="card-icon">&#10022;</span>
+            <span class="card-label">Art Deco</span>
+            <span class="card-count">c.1920–1940</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/era:retro/" target="_blank" rel="noopener">
+            <span class="card-icon">&#10022;</span>
+            <span class="card-label">Retro &amp; Vintage</span>
+            <span class="card-count">c.1940–1980</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- By Gemstone -->
+      <div>
+        <div class="search-group-header"><h2>Shop by Gemstone</h2></div>
+        <div class="browse-grid browse-grid--4">
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:diamond/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Diamond</span>
+            <span class="card-count">158 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:sapphire/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Sapphire</span>
+            <span class="card-count">51 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:ruby/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Ruby</span>
+            <span class="card-count">26 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:emerald/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Emerald</span>
+            <span class="card-count">17 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:amethyst/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Amethyst</span>
+            <span class="card-count">17 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:tanzanite/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Tanzanite</span>
+            <span class="card-count">18 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:opal/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Opal</span>
+            <span class="card-count">6 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:garnet/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9671;</span>
+            <span class="card-label">Garnet</span>
+            <span class="card-count">10 pieces</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- By Metal -->
+      <div>
+        <div class="search-group-header"><h2>Shop by Metal</h2></div>
+        <div class="browse-grid browse-grid--4">
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:gold/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9830;</span>
+            <span class="card-label">Gold</span>
+            <span class="card-count">343 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:platinum/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9830;</span>
+            <span class="card-label">Platinum</span>
+            <span class="card-count">22 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:white-gold/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9830;</span>
+            <span class="card-label">White Gold</span>
+            <span class="card-count">11 pieces</span>
+          </a>
+          <a class="browse-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/material:rose-gold/" target="_blank" rel="noopener">
+            <span class="card-icon">&#9830;</span>
+            <span class="card-label">Rose Gold</span>
+            <span class="card-count">Selected pieces</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- By Price -->
+      <div>
+        <div class="search-group-header"><h2>Shop by Budget</h2></div>
+        <div class="price-grid">
+          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:28-150/" target="_blank" rel="noopener">
+            <span class="price-range">Under £150</span>
+            <span class="price-label">Entry Pieces</span>
+          </a>
+          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:150-300/" target="_blank" rel="noopener">
+            <span class="price-range">£150 – £300</span>
+            <span class="price-label">Mid Range</span>
+          </a>
+          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:300-600/" target="_blank" rel="noopener">
+            <span class="price-range">£300 – £600</span>
+            <span class="price-label">Fine Pieces</span>
+          </a>
+          <a class="price-card" href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html/price:600-1850/" target="_blank" rel="noopener">
+            <span class="price-range">£600 &amp; Above</span>
+            <span class="price-label">Collector's Pieces</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="search-cta">
+      <p>Can't find what you're looking for? Get in touch — we source pieces to order.</p>
+      <a href="contact.html" class="btn btn-gold">Make an Enquiry</a>
+    </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-col">
+        <img src="assets/logo.png" alt="Little Red Box">
+        <span class="f-brand">Little Red Box</span>
+        <span class="f-tag">Antique &amp; Vintage Jewellery</span>
+        <p class="f-copy">Dealer No. 1659 — Hemswell Antique Centres, Lincolnshire.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="about.html">About Us</a><br>
+          <a href="https://www.hemswell-antiques.com/dealers/j-a-m-antiques-and-j-a-m-jewellery.html" target="_blank" rel="noopener">Our Collection ↗</a><br>
+          <a href="search.html">Specialist Jewellery Search</a><br>
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Hemswell Antique Centres<br>
+          Caenby Corner Estate<br>
+          Hemswell Cliff, Gainsborough<br>
+          Lincolnshire<br><br>
+          <a href="tel:01427668389">01427 668 389</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 Little Red Box — Antique &amp; Vintage Jewellery</span>
+      <span>Dealer No. 1659</span>
+    </div>
+  </footer>
+
+</body>
+</html>
