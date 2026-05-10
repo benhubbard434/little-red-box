@@ -127,7 +127,27 @@
       color: var(--text-light);
       line-height: 1.75;
       max-width: 220px;
-      margin: 0 auto;
+      margin: 0 auto 0.5rem;
+    }
+
+    .pillar-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .pillar-social a {
+      color: var(--gold-l);
+      transition: color 0.2s;
+      line-height: 0;
+    }
+
+    .pillar-social a:hover { color: var(--crimson); }
+
+    .pillar-social svg {
+      width: 18px;
+      height: 18px;
     }
 
     /* ── QUOTE ── */
@@ -295,18 +315,31 @@
       <div class="pillars-grid">
         <div class="pillar">
           <span class="pillar-icon">&#10070;</span>
-          <h3>Over 1,000 Pieces</h3>
-          <p>A vast and ever-changing collection of Antique, Retro &amp; Vintage jewellery, each piece hand-selected for quality and character.</p>
+          <h3>Over A Thousand Pieces</h3>
+          <p>A vast and ever-changing collection of antique, retro and vintage jewellery, each piece hand-selected for quality and character.</p>
         </div>
         <div class="pillar">
           <span class="pillar-icon">&#10070;</span>
-          <h3>Trusted Dealers</h3>
-          <p>Established dealers at Hemswell Antique Centres with a loyal following from both the public and the trade, worldwide.</p>
+          <h3>Personal Shopper Service</h3>
+          <p>Can't find what you're looking for or don't know where to start?</p>
+          <p>Use our free jewellery search service where we'll work with you to define and source the perfect piece.</p>
         </div>
         <div class="pillar">
           <span class="pillar-icon">&#10070;</span>
           <h3>Worldwide Delivery</h3>
-          <p>We deliver to anywhere in the world. Every item ships with care — fully insured and presented in a jewellery box.</p>
+          <p>We deliver our jewellery to anywhere in the world in one of our signature red boxes.</p>
+          <p>Our items are shipped by Hemswell Antique Centres where most are posted via Royal Mail Special Delivery, fully insured and tracked. Overseas postage is quoted at checkout.</p>
+          <div class="pillar-social">
+            <a href="contact.html" aria-label="Contact us">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/little.red.box.jewellery?igsh=c3V3YnBmN3FnaTFx" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@little.red.box.jewellery?_r=1&_t=ZN-96BzA6Npfcc" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.77a8.27 8.27 0 004.84 1.55V6.88a4.85 4.85 0 01-1.07-.19z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
