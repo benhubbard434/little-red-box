@@ -339,7 +339,9 @@ main { flex: 1; }
 @media (max-width: 899px) {
   .nav-toggle { display: flex; }
 
-  .header-inner { flex-wrap: wrap; align-items: center; }
+  .header-inner { flex-wrap: wrap; align-items: center; gap: 0; }
+
+  .header-logo { flex: 1; }
 
   .site-header nav {
     flex: 0 0 100%;
@@ -376,4 +378,10 @@ main { flex: 1; }
     background-color: var(--parchment);
     border-bottom-color: var(--border);
   }
+}
+
+@media (max-width: 400px) {
+  .header-logo img { height: 38px; width: 38px; }
+  .header-logo-text .brand { font-size: 1rem; }
+  .header-logo-text .tagline { font-size: 0.58rem; letter-spacing: 0.12em; }
 }
