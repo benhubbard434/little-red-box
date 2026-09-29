@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://littleredbox.co.uk/sitemap.xml

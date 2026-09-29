@@ -4,7 +4,7 @@
 :root {
   --crimson:    #8B1A1A;
   --crimson-d:  #6A1212;
-  --gold:       #B8860B;
+  --gold:       #84610A;
   --gold-l:     #C9A84C;
   --cream:      #F7F3EE;
   --parchment:  #EFE9DF;
@@ -12,10 +12,17 @@
   --border:     #E0D5C5;
   --text-dark:  #2C1810;
   --text-mid:   #5A4A3A;
-  --text-light: #8C7B6A;
+  --text-light: #6E5E4E;
 }
 
 html { scroll-behavior: smooth; }
+
+:focus-visible {
+  outline: 2px solid var(--crimson);
+  outline-offset: 3px;
+}
+
+.site-footer :focus-visible { outline-color: var(--gold-l); }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -198,7 +205,7 @@ main { flex: 1; }
 
 .footer-logo-col .f-copy {
   font-size: 0.78rem;
-  color: #6A5A4A;
+  color: #A08F7D;
   margin-top: 0.4rem;
   line-height: 1.7;
 }
@@ -217,7 +224,7 @@ main { flex: 1; }
   font-style: normal;
   font-size: 0.8rem;
   line-height: 1.85;
-  color: #8A7A6A;
+  color: #A08F7D;
 }
 
 .footer-col a {
@@ -252,7 +259,7 @@ main { flex: 1; }
 }
 
 .social-links a {
-  color: var(--gold-l);
+  color: var(--gold);
   transition: color 0.2s;
   line-height: 0;
 }
@@ -370,13 +377,18 @@ main { flex: 1; }
     flex: 0 0 100%;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease, border-color 0.1s;
+    /* visibility keeps the closed menu out of the tab order and screen readers;
+       it flips after the collapse animation finishes */
+    visibility: hidden;
+    transition: max-height 0.35s ease, border-color 0.1s, visibility 0s linear 0.35s;
     border-top: 1px solid transparent;
   }
 
   .site-header.nav-open nav {
     max-height: 500px;
     border-top-color: var(--border);
+    visibility: visible;
+    transition: max-height 0.35s ease, border-color 0.1s, visibility 0s;
   }
 
   .header-nav {
